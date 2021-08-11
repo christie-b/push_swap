@@ -1,0 +1,103 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils2.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/04 14:28:33 by cboutier          #+#    #+#             */
+/*   Updated: 2021/08/10 14:21:57 by cboutier         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../incl/push_swap.h"
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+void	put_error(void)
+{
+	write(STDERR_FILENO, "Error\n", 6);
+	exit(1);
+}
+
+int	get_min(t_stack *stack, int size)
+{
+	int	i;
+	int	min;
+
+	i = 0;
+	min = INT_MAX;
+	while (i < size)
+	{
+		if (stack->tab[i] < min)
+			min = stack->tab[i];
+		i++;
+	}
+	return (min);
+}
+
+int get_max(t_stack *stack, int size)
+{
+	int i;
+	int max;
+
+	i = 0;
+	max = INT_MIN;
+	while (i < size)
+	{
+		if (stack->tab[i] > max)
+			max = stack->tab[i];
+		i++;
+	}
+	return (max);
+}
+
+int	ft_isdigit2(char **av)
+{
+	int	i;
+
+	i = 0;
+	while (av[1][i])
+	{
+		if ((av[1][i] >= '0' && av[1][i] <= '9') || av[1][i] == '-'
+			|| av[1][i] == '+' || av[1][i] == ' ')
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+int	ft_isdigit(int ac, char **av)
+{
+	int	i;
+	int	j;
+
+	if (ac == 2)
+		return (ft_isdigit2(av));
+	else
+	{
+		i = 0;
+		while (++i < ac)
+		{
+			j = 0;
+			while (av[i][j])
+			{
+				if ((av[i][j] >= '0' && av[i][j] <= '9') || av[i][j] == '-'
+					|| av[i][j] == '+')
+					j++;
+				else
+					return (0);
+			}
+		}
+	}
+	return (1);
+}
