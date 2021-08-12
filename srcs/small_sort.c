@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 09:18:25 by cboutier          #+#    #+#             */
-/*   Updated: 2021/08/07 16:15:28 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/08/12 10:07:49 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,22 @@ void	sort_four(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_five(t_stack *stack_a, t_stack *stack_b)
 {
-	int	min;
+	int	i;
 
-	min = get_min(stack_a, stack_a->size);
-	sort_five_rotate(stack_a, stack_b, min);
-	if (!(is_sorted(stack_a)))
+	while (stack_a->size != 3)
 	{
-		sort_four(stack_a, stack_b);
-		ft_push(stack_a, stack_b, "pa");
+		i = 0;
+		while (stack_a->tab[i] != get_min(stack_a, stack_a->size))
+			i++;
+		sort_five_rotate(stack_a, i);
+		ft_push(stack_b, stack_a, "pb");
 	}
+	sort_three(stack_a);
+	while (stack_b->size)
+		ft_push(stack_a, stack_b, "pa");
 }
 
-void	sort_fiftyfive(t_stack *stack_a, t_stack *stack_b)
+void	sort_twenty(t_stack *stack_a, t_stack *stack_b)
 {
 	int		i;
 	int		min;
@@ -86,7 +90,7 @@ void	sort_fiftyfive(t_stack *stack_a, t_stack *stack_b)
 				index = i;
 			}
 		}
-		sort_fiftyfive_rotate(stack_a, stack_a->size / 2, index);
+		sort_twenty_rotate(stack_a, stack_a->size / 2, index);
 		ft_push(stack_b, stack_a, "pb");
 		k--;
 	}

@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 17:19:08 by cboutier          #+#    #+#             */
-/*   Updated: 2021/08/07 16:15:48 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/08/12 10:06:23 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,65 +41,28 @@ void	sort_four_rotate(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-// void	sort_five_rotate(t_stack *stack_a, t_stack *stack_b, int min)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < stack_a->size)
-// 	{
-// 		if (stack_a->smpl_tab[i] == min)
-// 		{
-// 			while (i)
-// 			{
-// 				if (i == 3 || i == 4)
-// 				{
-// 					if (i == 3)
-// 						ft_rev_rotate(stack_a, "rra");
-// 					ft_rev_rotate(stack_a, "rra");
-// 					break ;
-// 				}
-// 				else
-// 				{
-// 					ft_rotate(stack_a, "ra");
-// 					i--;
-// 				}
-// 			}
-// 			if (!(smpl_is_sorted(stack_a)))
-// 				ft_push(stack_b, stack_a, "pb");
-// 		}
-// 		i++;
-// 	}
-// }
-
-void	sort_five_rotate(t_stack *stack_a, t_stack *stack_b, int min)
+void	sort_five_rotate(t_stack *stack_a, int i)
 {
-	int	i;
-
-	i = -1;
-	while (++i < stack_a->size)
+	while (i > 0)
 	{
-		if (stack_a->tab[i] == min)
+		if (i <= 2)
 		{
-			while (i--)
+			ft_rotate(stack_a, "ra");
+			i--;
+		}
+		else
+		{
+			i = stack_a->size - i;
+			while (i > 0)
 			{
-				if (i == 2 || i == 3)
-				{
-					if (i == 2)
-						ft_rev_rotate(stack_a, "rra");
-					ft_rev_rotate(stack_a, "rra");
-					break ;
-				}
-				else
-					ft_rotate(stack_a, "ra");
+				ft_rev_rotate(stack_a, "rra");
+				i--;
 			}
-			if (!(is_sorted(stack_a)))
-				ft_push(stack_b, stack_a, "pb");
 		}
 	}
 }
 
-void	sort_fiftyfive_rotate(t_stack *stack_a, int half_size, int index)
+void	sort_twenty_rotate(t_stack *stack_a, int half_size, int index)
 {
 	if (half_size > index)
 	{

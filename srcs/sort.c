@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:46:37 by cboutier          #+#    #+#             */
-/*   Updated: 2021/08/07 16:17:58 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/08/12 12:58:39 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_swap(int *tab, char *str)
 		tab[1] = tmp_a;
 		tab[0] = tmp_b;
 		write(STDOUT_FILENO, str, ft_strlen(str));
-		write(STDOUT_FILENO, "\n", 1);
+		if (str)
+			write(STDOUT_FILENO, "\n", 1);
 	}
 }
 
@@ -40,7 +41,8 @@ void	ft_push(t_stack *dst, t_stack *src, char *str)
 			sizeof(int) * (src->capacity - 1));
 		src->size--;
 		write(STDOUT_FILENO, str, ft_strlen(str));
-		write(STDOUT_FILENO, "\n", 1);
+		if (str)
+			write(STDOUT_FILENO, "\n", 1);
 	}
 }
 
@@ -53,7 +55,8 @@ void	ft_rotate(t_stack *stack, char *str)
 		* (stack->size - 1));
 	stack->tab[stack->size - 1] = tmp;
 	write(STDOUT_FILENO, str, ft_strlen(str));
-	write(STDOUT_FILENO, "\n", 1);
+	if (str)
+		write(STDOUT_FILENO, "\n", 1);
 }
 
 void	ft_rev_rotate(t_stack *stack, char *str)
@@ -65,5 +68,6 @@ void	ft_rev_rotate(t_stack *stack, char *str)
 		* (stack->size - 1));
 	stack->tab[0] = tmp;
 	write(STDOUT_FILENO, str, ft_strlen(str));
-	write(STDOUT_FILENO, "\n", 1);
+	if (str)
+		write(STDOUT_FILENO, "\n", 1);
 }

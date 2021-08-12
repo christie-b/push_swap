@@ -6,11 +6,17 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 10:56:45 by cboutier          #+#    #+#             */
-/*   Updated: 2021/08/09 10:38:16 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/08/12 13:04:25 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
+
+void	put_error(void)
+{
+	write(STDERR_FILENO, "Error\n", 6);
+	exit(1);
+}
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
@@ -83,24 +89,14 @@ long long	ft_atoi(const char *str)
 	return (sign * result);
 }
 
-int	ft_free_stack(t_stack *stack)
-{
-	if (stack->tab)
-		free(stack->tab);
-	return (0);
-}
-
-int	ft_free_tab(char **tab)
+int	ft_strlen(char *str)
 {
 	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
+	while (str[i])
 		i++;
-	}
-	free(tab);
-	tab = NULL;
-	return (0);
+	return (i);
 }

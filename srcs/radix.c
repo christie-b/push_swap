@@ -6,7 +6,7 @@
 /*   By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 09:46:34 by cboutier          #+#    #+#             */
-/*   Updated: 2021/08/11 09:49:49 by cboutier         ###   ########.fr       */
+/*   Updated: 2021/08/11 12:22:43 by cboutier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void	sort_tab(t_stack *stack_a, int *tab)
 		}
 		i++;
 	}
-	// for (int i = 0; i < stack_a->size; i++)
-	// 	printf("tab simp2[%d] : %d\n", i, tab[i]);
 }
 
 void	simplify_tab(t_stack *stack_a)

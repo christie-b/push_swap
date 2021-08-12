@@ -6,7 +6,7 @@
 #    By: cboutier <cboutier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/27 11:17:16 by cboutier          #+#    #+#              #
-#    Updated: 2021/08/11 09:58:21 by cboutier         ###   ########.fr        #
+#    Updated: 2021/08/11 12:05:08 by cboutier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ SRCS_DIR	= srcs
 
 NAMES		= push_swap.c sort.c radix.c push_swap_utils.c push_swap_utils2.c \
 				small_sort.c ft_split.c check_sort.c check_args.c radix_utils.c \
-				sort_utils.c \
-				sort_hundred.c
+				sort_utils.c ft_free.c \
+				sort_hundred.c sort_hundred_utils.c
 
 SRCS		= $(addprefix $(SRCS_DIR)/, $(NAMES))
 
@@ -28,7 +28,7 @@ OBJS		= ${SRCS:.c=.o}
 NAME		= push_swap
 
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -g3 #-fsanitize=address 
+CFLAGS		= -Wall -Wextra -Werror -g3 -fsanitize=address 
 
 RM		= rm -f
 
