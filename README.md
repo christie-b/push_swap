@@ -1,5 +1,7 @@
 # push_swap
 
+[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/cboutier/push_swap)](https://github.com/JaeSeoKim/badge42)
+
 Validated on August 14th, 2021
 
 115/100 with bonus (checker to check if the instructions entered are sorting the stack properly.
