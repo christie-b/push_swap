@@ -1,6 +1,6 @@
 # push_swap
 
-[![jaeskim's 42Project Score](https://badge42.herokuapp.com/api/project/cboutier/push_swap)](https://github.com/JaeSeoKim/badge42)
+[![cboutier's 42 push_swap Score](https://badge42.vercel.app/api/v2/cl1f9y1k8000609jsc4a29jay/project/2267599)](https://github.com/JaeSeoKim/badge42)
 
 Validated on August 14th, 2021
 
